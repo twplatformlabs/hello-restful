@@ -9,12 +9,12 @@ orbs:
   do: twdps/pipeline-events@5.0.1
 
 globals:
-  - &context empc-lab
+  - &context platform
   - &shell op run --env-file op.env -- /bin/bash -eo pipefail
-  - &deploy-image twdps/circleci-kube-ops:alpine-3.2.1
+  - &deploy-image twdps/circleci-kube-ops:alpine-3.5.0
   - &package-manager pip
   - &image hello-restful
-  - &registry ghcr.io/thoughtworks-dps
+  - &registry ghcr.io/twplatformlabs
 
 on-push-main: &on-push-main
   branches:
@@ -48,16 +48,16 @@ commands:
             echo "export API_VERSION=<< parameters.tag >>" >> $BASH_ENV
             source $BASH_ENV
       - op/write-to-file:
-          op-value: empc-lab/svc-cosign-private-key/notesPlain
+          op-value: platform/svc-cosign-private-key/notesPlain
           out-file: cosign.key
       - op/write-to-file:
-          op-value: empc-lab/svc-cosign-public-key/notesPlain
+          op-value: platform/svc-cosign-public-key/notesPlain
           out-file: cosign.pub
       - when:
           condition: << parameters.cluster >>
           steps:
             - kube/op-config:
-                op-value: empc-lab/psk-aws-<< parameters.cluster>>/kubeconfig-base64
+                op-value: platform/<< parameters.cluster>>/kubeconfig-base64
 
 jobs:
 

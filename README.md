@@ -16,7 +16,7 @@ Access at [https://twdps.io/v1/hello](https://twdps.io/v1/hello). OAS documentat
 
 To run locally on docker:    
 ```bash
-docker run -it -d -p 8000:8000 ghcr.io/thoughtworks-dps/hello-restful  
+docker run -it -d -p 8000:8000 ghcr.io/twplatformlabs/hello-restful  
 ```
 Access on http://localhost:8000/v1/hello   
 
