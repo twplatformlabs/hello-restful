@@ -3,9 +3,9 @@
 virtualService:
   create: true
   hosts:
-    - dev.twdps.io
+    - dev.twplatformlabs.org
   gateways:
-    - istio-system/dev-twdps-io-gateway
+    - istio-system/dev-twplatformlabs-org-gateway
   matchUrl: /v1/hello
 
 autoscaling:
