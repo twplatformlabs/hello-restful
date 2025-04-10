@@ -11,9 +11,9 @@ DESCRIPTION = """
 <a href="https://github.com/twplatformlabs/hello-restful"><img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/twplatformlabs/hello-restful"></a> <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/github/license/twplatformlabs/hello-restful"></a>
 <div align="center">
 	<p>
-		<img alt="twplatformlabs" src="https://raw.githubusercontent.com/ThoughtWorks-DPS/static/master/banner.png" />
+		<img alt="twplatformlabs" src="https://raw.githubusercontent.com/ThoughtWorks-DPS/static/master/banner.png?sanitize=true" width=600 />
 	</p>
-  <h2>Lightweight RESTful API simulator and testing endpoint</h2>
+  <h2>Lightweight RESTful API simulator and testing endpoint</h3>
 </div>
 <br />
 """
