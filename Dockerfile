@@ -2,9 +2,9 @@ FROM python:3.12-alpine
 
 LABEL org.opencontainers.image.created="%%CREATED%%" \
       org.opencontainers.image.authors="nic.cheneweth@thoughtworks.com" \
-      org.opencontainers.image.documentation="https://github.com/ThoughtWorks-DPS/hello-restful" \
-      org.opencontainers.image.source="https://github.com/ThoughtWorks-DPS/hello-restful" \
-      org.opencontainers.image.url="https://github.com/ThoughtWorks-DPS/hello-restful" \
+      org.opencontainers.image.documentation="https://github.com/twplatformlabs/hello-restful" \
+      org.opencontainers.image.source="https://github.com/twplatformlabs/hello-restful" \
+      org.opencontainers.image.url="https://github.com/twplatformlabs/hello-restful" \
       org.opencontainers.image.version="%%VERSION%%" \
       org.opencontainers.image.vendor="ThoughtWorks, Inc." \
       org.opencontainers.image.licenses="MIT" \

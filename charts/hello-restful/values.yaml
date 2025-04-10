@@ -23,7 +23,7 @@ virtualService:
   # matchUrl: /v1/hello
 
 image:
-  repository: ghcr.io/thoughtworks-dps
+  repository: ghcr.io/twplatformlabs
   name: hello-restful
   tag: ""
   pullPolicy: IfNotPresent
