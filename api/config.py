@@ -11,9 +11,7 @@ DESCRIPTION = """
 <a href="https://github.com/twplatformlabs/hello-restful"><img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/twplatformlabs/hello-restful"></a> <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/github/license/twplatformlabs/hello-restful"></a>
 <div align="center">
 	<p>
-		<img alt="Thoughtworks Logo" src="https://raw.githubusercontent.com/twplatformlabs/static/master/thoughtworks_flamingo_wave.png?sanitize=true" width=400 />
-    <br />
-		<img alt="DPS Title" src="https://raw.githubusercontent.com/twplatformlabs/static/master/EMPCPlatformStarterKitsImage.png" width=350/>
+		<img alt="twplatformlabs" src="https://raw.githubusercontent.com/ThoughtWorks-DPS/static/master/banner.png?sanitize=true" width=400 />
 	</p>
   <h1>Lightweight RESTful API simulator and testing endpoint</h1>
 </div>
