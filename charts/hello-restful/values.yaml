@@ -27,6 +27,7 @@ image:
   name: hello-restful
   tag: ""
   pullPolicy: IfNotPresent
+  imagePullSecret: regcred
 
 strategy:
   type: RollingUpdate

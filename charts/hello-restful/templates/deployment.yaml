@@ -70,5 +70,5 @@ spec:
       {{- end }}
       {{- if ne .Release.Namespace "demo-local" }}
       imagePullSecrets:
-        - name: regcreds
+        - name: {{ .Values.image.imagePullSecret  | default "regcred" }}
       {{- end }}
