@@ -1,4 +1,4 @@
-FROM python:3.12-alpine
+FROM python:3.13-alpine
 
 LABEL org.opencontainers.image.created="%%CREATED%%" \
       org.opencontainers.image.authors="nic.cheneweth@thoughtworks.com" \
@@ -20,16 +20,16 @@ ENV MUSL_LOCPATH=/usr/share/i18n/locales/musl \
 
 # hadolint ignore=DL3003
 RUN apk add --no-cache \
-        libintl=0.22.5-r0 \
-        openssl=3.3.3-r0 && \
+        libintl=0.24.1-r0 \
+        openssl=3.5.0-r0 && \
     apk --no-cache add --virtual build-dependencies \
-        cmake==3.31.1-r0 \
-        make==4.4.1-r2 \
-        musl==1.2.5-r9 \
-        musl-dev==1.2.5-r9 \
-        musl-utils==1.2.5-r9 \
-        gcc==14.2.0-r4 \
-        gettext-dev==0.22.5-r0 && \
+        cmake==3.31.7-r1 \
+        make==4.4.1-r3 \
+        musl==1.2.5-r10 \
+        musl-dev==1.2.5-r10 \
+        musl-utils==1.2.5-r10 \
+        gcc==14.2.0-r6 \
+        gettext-dev==0.24.1-r0 && \
     wget -q https://gitlab.com/rilian-la-te/musl-locales/-/archive/master/musl-locales-master.zip && \
     unzip musl-locales-master.zip && cd musl-locales-master && \
     cmake -DLOCALE_PROFILE=OFF -D CMAKE_INSTALL_PREFIX:PATH=/usr . && \
