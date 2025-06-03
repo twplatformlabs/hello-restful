@@ -192,16 +192,6 @@ workflows:
             - publish release candidate
           filters: *on-tag-main
 
-      - delete-deployment:
-          name: remove preview deployment for sbx cost saving
-          context: *context
-          cluster: sbx-i01-aws-us-east-1
-          namespace: preview
-          tag: $CIRCLE_TAG
-          requires:
-            - preview deployment
-          filters: *on-tag-main
-
       - approve-prod:
           type: approval
           requires:
@@ -233,4 +223,40 @@ workflows:
                 include-tag: true
           requires:
             - prod deployment
+          filters: *on-tag-main
+
+      - approve-run-minimum:
+          type: approval
+          requires:
+            - prod deployment
+          filters: *on-tag-main
+
+      - delete-deployment:
+          name: remove preview deployment for sbx cost saving
+          context: *context
+          cluster: sbx-i01-aws-us-east-1
+          namespace: preview
+          tag: $CIRCLE_TAG
+          requires:
+            - approve-run-minimum
+          filters: *on-tag-main
+
+      - delete-deployment:
+          name: remove dev deployment for prod cost saving
+          context: *context
+          cluster: prod-i01-aws-us-east-2
+          namespace: dev
+          tag: dev.${CIRCLE_SHA1:0:7}
+          requires:
+            - approve-run-minimum
+          filters: *on-tag-main
+
+      - delete-deployment:
+          name: remove qa deployment for prod cost saving
+          context: *context
+          cluster: prod-i01-aws-us-east-2
+          namespace: qa
+          tag: $CIRCLE_TAG
+          requires:
+            - approve-run-minimum
           filters: *on-tag-main
