@@ -4,3 +4,5 @@ coverage == 7.8.2
 pre-commit == 4.2.0
 httpx == 0.28.1
 mock == 5.2.0
+black == 25.1.0
+bandit == 1.8.3

@@ -12,9 +12,19 @@ repos:
         exclude: ^chart/
       - id: forbid-new-submodules
       - id: detect-private-key
-      - id: detect-aws-credentials
       - id: trailing-whitespace
         args: [--markdown-linebreak-ext=md]
+  - repo: https://github.com/psf/black
+    rev: 25.1.0
+    hooks:
+      - id: black
+        language_version: python3.13
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.8.3
+    hooks:
+      - id: bandit
+        name: bandit (security linter)
+        args: ["-ll", "-r", "api"]
   - repo: local
     hooks:
       - id: git-secrets
