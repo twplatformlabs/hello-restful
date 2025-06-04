@@ -13,7 +13,7 @@ def test_inspection_headers():
     assert response.status_code == 200
 
 
-#@pytest.mark.skip(reason="until fastapi supports starlette>=0.37.2 with fix in https://github.com/encode/starlette/pull/2525")
+# @pytest.mark.skip(reason="until fastapi supports starlette>=0.37.2 with fix in https://github.com/encode/starlette/pull/2525")
 def test_inspection_ip():
     response = client.get("ip")
     assert response.status_code == 200

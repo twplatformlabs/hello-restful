@@ -4,31 +4,22 @@ The hello-restful api
 An example of a RESTful API written in Python using FastAPI. Modeled after httobin,
 but with some api resources definitions useful for misc mocks and other testing.
 """
+
+from typing import Dict
 from fastapi import FastAPI
 from opentelemetry.instrumentation.fastapi import FastAPIInstrumentor
 from .routes import inspection, status, methods, file_response, healthz, istio
 from .config import settings, route_prefix
 
 tags_metadata = [
-    {
-        "name": "main"
-    },
+    {"name": "main"},
     {
         "name": "status codes",
-        "description": "Return desired status code from any method."
+        "description": "Return desired status code from any method.",
     },
-    {
-        "name": "request inspection",
-        "description": "View elements in the request."
-    },
-    {
-        "name": "example resource",
-        "description": "Simulated employee list."
-    },
-    {
-        "name": "response formats",
-        "description": "Return different file formats."
-    }
+    {"name": "request inspection", "description": "View elements in the request."},
+    {"name": "example resource", "description": "Simulated employee list."},
+    {"name": "response formats", "description": "Return different file formats."},
 ]
 
 api = FastAPI(
@@ -39,7 +30,7 @@ api = FastAPI(
     docs_url=f"{route_prefix}/apidocs",
     openapi_url=f"{route_prefix}/openapi.json",
     redoc_url=None,
-    debug=settings.debug
+    debug=settings.debug,
 )
 
 api.include_router(inspection.route, prefix=route_prefix)
@@ -51,10 +42,11 @@ api.include_router(istio.route, prefix=route_prefix)
 
 
 @api.get(route_prefix, summary="greeting", tags=["main"])
-async def root():
+async def root() -> Dict[str, str]:
     """
     root endpoint and hello response.
     """
-    return { "message": "Hello Restful!" }
+    return {"message": "Hello Restful!"}
+
 
 FastAPIInstrumentor.instrument_app(api)
