@@ -12,13 +12,14 @@
 
 hello-restful is a small, fastapi service designed to be deployed on kubernetes and provide common http request/response endpoints and demonstrate using an openapi framework for automated api documentation.  
 
-Access at [https://twplatformlabs.org/v1/hello](https://twplatformlabs.org/v1/hello). OAS documentation [here](https://twplatformlabs.org/v1/hello/apidocs).  _pending_
+Access at [https://twplatformlabs.org/v1/hello](https://twplatformlabs.org/v1/hello).  
+OAS documentation [here](https://twplatformlabs.org/v1/hello/apidocs).  _pending_
 
-To run locally on docker:    
+To run locally on docker:  
 ```bash
 docker run -it -d -p 8000:8000 ghcr.io/twplatformlabs/hello-restful  
 ```
-Access on http://localhost:8000/v1/hello   
+Access on http://localhost:8000/v1/hello  
 
 ## local developement  
 
