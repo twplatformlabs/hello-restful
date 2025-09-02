@@ -11,3 +11,10 @@ helm upgrade hello-restful charts/hello-restful \
       --values "charts/hello-restful/values.yaml" \
       --values "charts/hello-restful/values-$env.yaml" \
       --set image.tag="$tag"
+
+
+# helm template hello-restful charts/hello-restful \
+#       --namespace "demo-$env" \
+#       --values "charts/hello-restful/values.yaml" \
+#       --values "charts/hello-restful/values-dev.yaml" \
+#       --set image.tag="$tag"

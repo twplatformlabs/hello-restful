@@ -2,7 +2,7 @@
 version: 2.1
 
 orbs:
-  python: twdps/python-api@dev:alpha
+  python: twdps/python-api@2.0.1
   op: twdps/onepassword@3.0.0
   cosign: twdps/cosign@0.1.1
   kube: twdps/kube-ops@1.1.2
